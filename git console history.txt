@@ -1,0 +1,2153 @@
+C:\Users\ganes\AppData\Roaming\npm/node: line 8: C:\Users\ganes\AppData\Roaming\npm/node_modules/node/bin/node: No such file or directory
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic
+$ git init
+Initialized empty Git repository in C:/Development/workspace/git-topic/.git/
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git tree
+git: 'tree' is not a git command. See 'git --help'.
+
+The most similar command is
+        mktree
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git mktree
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph -decorate --all
+error: did you mean `--decorate` (with two dashes)?
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+        a.txt.bak
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git add a.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git commit -m "file a"
+[master (root-commit) eb0a8ca] file a
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log
+commit eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc (HEAD -> master)
+Author: ganesh <ganesh.budhathoki88@gmail.com>
+Date:   Fri Mar 17 11:59:26 2023 -0400
+
+    file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc (HEAD -> master) file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git mktree
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git ls-files-s | git mktree
+git: 'ls-files-s' is not a git command. See 'git --help'.
+4b825dc642cb6eb9a060e54bf8d69288fbee4904
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git worktree
+usage: git worktree add [<options>] <path> [<commit-ish>]
+   or: git worktree list [<options>]
+   or: git worktree lock [<options>] <path>
+   or: git worktree move <worktree> <new-path>
+   or: git worktree prune [<options>]
+   or: git worktree remove [<options>] <worktree>
+   or: git worktree unlock <path>
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git worktree list
+C:/Development/workspace/git-topic  eb0a8ca [master]
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        b.txt
+        c.txt
+        d.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git add b.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git commit -m "file b"
+[master 21b8cbf] file b
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        c.txt
+        d.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git commit -m "file c&d"
+[master c027877] file c&d
+ 2 files changed, 2 insertions(+)
+ create mode 100644 c.txt
+ create mode 100644 d.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 (HEAD -> master) file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branche
+error: pathspec 'branche' did not match any file(s) known to git
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout -b branch-e
+Switched to a new branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        e.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git commit -m "file e"
+[branch-e f07d1d9] file e
+ 1 file changed, 1 insertion(+)
+ create mode 100644 e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD -> branch-e) file e
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 (master) file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        f.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git commit -m "file f"
+[master c07975a] file f
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* c07975ac5c4cfa36c094c36689961de722ea946b (HEAD -> master) file f
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 (branch-e) file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD -> branch-e) file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        g.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git commit -m "file g"
+[branch-e 0185ba7] file g
+ 1 file changed, 1 insertion(+)
+ create mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD~2
+Note: switching to 'HEAD~2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at c027877 file c&d
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((c027877...))
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 (HEAD) file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((c027877...))
+$ git checkout branch-e
+Previous HEAD position was c027877 file c&d
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD~1
+Note: switching to 'HEAD~1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f07d1d9 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD) file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git checkout branch-e
+Previous HEAD position was f07d1d9 file e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git revert HEAD~1
+[branch-e b345739] Revert "file e"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* b345739aca8107e6b7c5f06191d4cc0a8f1d8f7a (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* b345739aca8107e6b7c5f06191d4cc0a8f1d8f7a (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* b345739aca8107e6b7c5f06191d4cc0a8f1d8f7a (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* b345739aca8107e6b7c5f06191d4cc0a8f1d8f7a (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD^
+Unstaged changes after reset:
+D       e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    e.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    e.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ gity restore e.txt
+bash: gity: command not found
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git restore e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD^2
+error: pathspec 'HEAD^2' did not match any file(s) known to git
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD^
+Note: switching to 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f07d1d9 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD) file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git checkout branch-e
+Previous HEAD position was f07d1d9 file e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD~1
+Note: switching to 'HEAD~1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f07d1d9 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD) file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git checkout branch-e
+Previous HEAD position was f07d1d9 file e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD^1
+Note: switching to 'HEAD^1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f07d1d9 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$  git status
+HEAD detached at f07d1d9
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git checkout branch-e
+Previous HEAD position was f07d1d9 file e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git revert HEAD^
+[branch-e 8e81ad1] Revert "file e"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 8e81ad14a61b0989aee6f623d5ce39d5b6a35e7b (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 8e81ad14a61b0989aee6f623d5ce39d5b6a35e7b (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD~1
+Unstaged changes after reset:
+D       e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    e.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git restore e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git revert HEAD~1
+[branch-e 9777a54] Revert "file e"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 9777a542d5cb38818be82de4175565583eb5a1a4 (HEAD -> branch-e) Revert "file e"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD^
+Unstaged changes after reset:
+D       e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    e.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git restore e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git revert HEAD
+[branch-e 5839089] Revert "file g"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 58390892f4816e027e6fd3d287efc4068537dd4c (HEAD -> branch-e) Revert "file g"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 58390892f4816e027e6fd3d287efc4068537dd4c (HEAD -> branch-e) Revert "file g"
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD~
+Unstaged changes after reset:
+D       g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git restore g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * c07975ac5c4cfa36c094c36689961de722ea946b (HEAD -> master) file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout -b branch-h
+Switched to a new branch 'branch-h'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git status
+On branch branch-h
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        h.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git commit -m "file h"
+[branch-h 3962eed] file h
+ 1 file changed, 1 insertion(+)
+ create mode 100644 h.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git log --pretty=oneline --graph --decorate --all
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 (HEAD -> branch-h) file h
+* c07975ac5c4cfa36c094c36689961de722ea946b (master) file f
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 (branch-h) file h
+* c07975ac5c4cfa36c094c36689961de722ea946b (HEAD -> master) file f
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git commit -m "file i"
+[master 21d21bf] file i
+ 1 file changed, 1 insertion(+)
+ create mode 100644 i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 21d21bf41d279bb4904a32a59f19492001c45b78 (HEAD -> master) file i
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 (branch-h) file h
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ checkout branch-e
+bash: checkout: command not found
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout branch-h
+Switched to branch 'branch-h'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  h.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  h.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git status
+On branch branch-h
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        j.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git commit -m "file j"
+[branch-h d8b6991] file j
+ 1 file changed, 1 insertion(+)
+ create mode 100644 j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  h.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git log --pretty=oneline --graph --decorate --all
+* d8b6991510552a9c2acbf19881c602d2e26e52dc (HEAD -> branch-h) file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 (HEAD -> master) file i
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git merge branch-e
+Merge made by the 'ort' strategy.
+ e.txt | 1 +
+ g.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 e.txt
+ create mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+*   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (HEAD -> master) Merge branch 'branch-e'
+|\
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 (branch-e) file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+* | 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+|/|
+* | c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-h
+Switched to branch 'branch-h'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  h.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-h
+Switched to branch 'branch-h'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  h.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD~
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+*   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+|\
+| * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD -> branch-e) file e
+* | 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+|/|
+* | c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        g.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git restore g.txt
+error: pathspec 'g.txt' did not match any file(s) known to git
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        g.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   g.txt
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git commit -m "reset g"
+[branch-e c48f5f5] reset g
+ 1 file changed, 1 insertion(+)
+ create mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (HEAD -> branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git revert HEAD^
+[branch-e 6949a02] Revert "file e"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 6949a02ddab03a42ed260ccd49fce3dce58cada1 (HEAD -> branch-e) Revert "file e"
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git reset HEAD~
+Unstaged changes after reset:
+D       e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git restore e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (HEAD -> branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD~2
+Note: switching to 'HEAD~2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at c027877 file c&d
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((c027877...))
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 (HEAD) file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((c027877...))
+$ git checkout HEAD~1
+Previous HEAD position was c027877 file c&d
+HEAD is now at 21b8cbf file b
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((21b8cbf...))
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d (HEAD) file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((21b8cbf...))
+$ git checkout branch-e
+Previous HEAD position was 21b8cbf file b
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (HEAD -> branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD~1
+Note: switching to 'HEAD~1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f07d1d9 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD) file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git checkout master
+Previous HEAD position was f07d1d9 file e
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (HEAD -> master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout HEAD^
+Note: switching to 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 21d21bf file i
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((21d21bf...))
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((21d21bf...))
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+| *   9c8bac0ce272d80aedb4468c1a12d5e4b8dd3ad4 (master) Merge branch 'branch-e'
+| |\
+| | * 0185ba7290be2806ba4c9d96e4f077e540ea8950 file g
+| |/
+|/|
+* | f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 (HEAD) file i
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((21d21bf...))
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((21d21bf...))
+$ git checkout master
+Previous HEAD position was 21d21bf file i
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git reset HEAD^
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        e.txt
+        g.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| | * 21d21bf41d279bb4904a32a59f19492001c45b78 (HEAD -> master) file i
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout -b test
+Switched to a new branch 'test'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (test)
+$ git status
+On branch test
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        e.txt
+        g.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (test)
+$ git add .
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (test)
+$ git commit -m "test"
+[test f867049] test
+ 2 files changed, 2 insertions(+)
+ create mode 100644 e.txt
+ create mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (test)
+$ git log --pretty=oneline --graph --decorate --all
+* f867049914fdd89486ec14a3b227815eeebbacba (HEAD -> test) test
+* 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+| * c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+| * f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| | * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| | * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| |/
+|/|
+* | c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (test)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git delete -b test
+git: 'delete' is not a git command. See 'git --help'.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git remove -b test
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git branch -d test
+error: The branch 'test' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D test'.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git branch -D test
+Deleted branch test (was f867049).
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (HEAD -> branch-e) reset g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| | * 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout HEAD^
+Note: switching to 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f07d1d9 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (branch-e) reset g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 (HEAD) file e
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| | * 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((f07d1d9...))
+$ git checkout  branch-e
+Previous HEAD position was f07d1d9 file e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c48f5f5314fdd23dae33715bea1339e013d4c2e4 (HEAD -> branch-e) reset g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| | * 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git commit --amend -m "file g"
+[branch-e 0d5ab18] file g
+ Date: Fri Mar 17 14:13:14 2023 -0400
+ 1 file changed, 1 insertion(+)
+ create mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 0d5ab18aeafbec094e6a62d96ca651e0a1cacc29 (HEAD -> branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| | * 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 0d5ab18aeafbec094e6a62d96ca651e0a1cacc29 (branch-e) file g
+* f07d1d934cb370538b1c7eb8a4e9733acb529010 file e
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| | * 21d21bf41d279bb4904a32a59f19492001c45b78 (HEAD -> master) file i
+| |/
+| * c07975ac5c4cfa36c094c36689961de722ea946b file f
+|/
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git rebase master
+Successfully rebased and updated refs/heads/branch-e.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 137d7397dbb611fd97bc806b91e951cdf0bf6d43 (HEAD -> branch-e) file g
+* 13433e4c4c2b9b9f7e26853d95c27ae949bf3ebe file e
+* 21d21bf41d279bb4904a32a59f19492001c45b78 (master) file i
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  f.txt  i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git merge branch-e
+Updating 21d21bf..137d739
+Fast-forward
+ e.txt | 1 +
+ g.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 e.txt
+ create mode 100644 g.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 137d7397dbb611fd97bc806b91e951cdf0bf6d43 (HEAD -> master, branch-e) file g
+* 13433e4c4c2b9b9f7e26853d95c27ae949bf3ebe file e
+* 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+| * d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+| * 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git rebase branch-h
+Successfully rebased and updated refs/heads/master.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (HEAD -> master) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| * 137d7397dbb611fd97bc806b91e951cdf0bf6d43 (branch-e) file g
+| * 13433e4c4c2b9b9f7e26853d95c27ae949bf3ebe file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git HEAD^
+git: 'HEAD^' is not a git command. See 'git --help'.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout HEAD^
+Note: switching to 'HEAD^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 4f93ac5 file e
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((4f93ac5...))
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((4f93ac5...))
+$ git log --pretty=oneline --graph --decorate --all
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (master) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 (HEAD) file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| * 137d7397dbb611fd97bc806b91e951cdf0bf6d43 (branch-e) file g
+| * 13433e4c4c2b9b9f7e26853d95c27ae949bf3ebe file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((4f93ac5...))
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic ((4f93ac5...))
+$ git checkout master
+Previous HEAD position was 4f93ac5 file e
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (HEAD -> master) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc (branch-h) file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| * 137d7397dbb611fd97bc806b91e951cdf0bf6d43 (branch-e) file g
+| * 13433e4c4c2b9b9f7e26853d95c27ae949bf3ebe file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-h
+Switched to branch 'branch-h'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git merge master
+Updating d8b6991..7d263e3
+Fast-forward
+ e.txt | 1 +
+ g.txt | 1 +
+ i.txt | 1 +
+ 3 files changed, 3 insertions(+)
+ create mode 100644 e.txt
+ create mode 100644 g.txt
+ create mode 100644 i.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git log --pretty=oneline --graph --decorate --all
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (HEAD -> branch-h, master) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+| * 137d7397dbb611fd97bc806b91e951cdf0bf6d43 (branch-e) file g
+| * 13433e4c4c2b9b9f7e26853d95c27ae949bf3ebe file e
+| * 21d21bf41d279bb4904a32a59f19492001c45b78 file i
+|/
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-h)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git merge branch-h
+Already up to date.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git rebase master
+warning: skipped previously applied commit 21d21bf
+warning: skipped previously applied commit 13433e4
+warning: skipped previously applied commit 137d739
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/branch-e.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (HEAD -> branch-e, master, branch-h) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (HEAD -> master, branch-h, branch-e) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git checkout branch-e
+Switched to branch 'branch-e'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  e1.txt  f.txt  g.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        e1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add . commit -m "file e1"
+error: unknown switch `m'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --sparse              allow updating entries outside of the sparse-checkout cone
+    --chmod (+|-)x        override the executable bit of the listed files
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add . | commit -m "file e1"
+bash: commit: command not found
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add . | git commit -m "file e1"
+[branch-e c076d8a] file e1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 e1.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+nothing to commit, working tree clean
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* c076d8a8dc9fdba4cda4b7a8721c0eb57e0e391c (HEAD -> branch-e) file e1
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (master, branch-h) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        g1.txt
+        g1.txt.bak
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ rm g1.txt.bak
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt  e1.txt  f.txt  g.txt  g1.txt  h.txt  i.txt  j.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git status
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        g1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git commit -m "file g1"
+On branch branch-e
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        g1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git add . | git commit -m "file g1"
+[branch-e e40176d] file g1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 g1.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git log --pretty=oneline --graph --decorate --all
+* e40176d834f43f150c081ecf8b1659cc646d4df2 (HEAD -> branch-e) file g1
+* c076d8a8dc9fdba4cda4b7a8721c0eb57e0e391c file e1
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (master, branch-h) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (branch-e)
+$ git checkout master
+Switched to branch 'master'
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        k1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git add . | git commit -m "file k1"
+fatal: Unable to create 'C:/Development/workspace/git-topic/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   k1.txt
+
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git commit -m "file k1"
+[master d7f3e12] file k1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 k1.txt
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$ git log --pretty=oneline --graph --decorate --all
+* d7f3e12f27a3334d4afe3cf47d5a1bf60ff40923 (HEAD -> master) file k1
+| * e40176d834f43f150c081ecf8b1659cc646d4df2 (branch-e) file g1
+| * c076d8a8dc9fdba4cda4b7a8721c0eb57e0e391c file e1
+|/
+* 7d263e3143c6b2737175d8c7ef57ad3ae9326d42 (branch-h) file g
+* 4f93ac5f56807913930d4b6c7b9327f32342e034 file e
+* bbd24eaf579f36ec9091e2a27740b60dc50b836e file i
+* d8b6991510552a9c2acbf19881c602d2e26e52dc file j
+* 3962eed7e5e7f7324eb416097dabd42f8a4fef19 file h
+* c07975ac5c4cfa36c094c36689961de722ea946b file f
+* c027877aec1c74b5c2356510e986b4ddf6fe7122 file c&d
+* 21b8cbf4642ce2abf9c2b5441d33b32c10afd17d file b
+* eb0a8ca4b22b9c3e69d6f6b975851bd39f6fa0cc file a
+
+ganes@MSI MINGW64 /c/Development/workspace/git-topic (master)
+$
