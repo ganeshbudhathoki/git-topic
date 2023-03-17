@@ -5,7 +5,7 @@ protecting you from accidental revert.
 make your git tree|flow seem like nothign changed.
 
 STATE 1
-Let's say you have have a following git history:
+Let's say you have have a following git history:  
 commit 1 -> commit 2 -> commit 3 (HEAD | branch:master)
 
 STATE 2
